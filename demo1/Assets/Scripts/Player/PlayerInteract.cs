@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
@@ -5,6 +6,8 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float shortRayDistance;    // objects up close
     [SerializeField] private float farRayDistance;      // objects far away
     [SerializeField] private LayerMask mask;            // interaction mask
+    [Header("HUD Elements")]
+    [SerializeField] private TextMeshProUGUI promptText;
     private Camera cam;
 
     private void Start() {
@@ -12,11 +15,12 @@ public class PlayerInteract : MonoBehaviour
     }
     private void Update()
     {
+        promptText.text = string.Empty;
+
         Ray ray = new(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * shortRayDistance);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, shortRayDistance, mask))
-        {
-            
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, shortRayDistance, mask)) {
+            promptText.text = hitInfo.collider.GetComponent<Interactable>().promptMessage;
         }
     }
 }
