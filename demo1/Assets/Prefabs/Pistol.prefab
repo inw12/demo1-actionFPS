@@ -334,7 +334,7 @@ MonoBehaviour:
   _damage: 1
   _fireRate: 0.3
   _bulletSpd: 300
-  _range: 30
+  _range: 45
   _accuracy: 85
   _bulletPrefab: {fileID: 2293477682359179800, guid: 565174b75342544eab4a26a470ecf629, type: 3}
   _bulletSpawn: {fileID: 7515231661484661467}
@@ -363,9 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f2a6861fcc44a02a882ebdf470cb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponRecoil
-  horizontalRecoil: 0.3
-  verticalRecoil: 20
-  recoilSpeed: 6
+  horizontalRecoil: 0.1
+  verticalRecoil: 13.5
+  recoilSpeed: 10
 --- !u!114 &4652575158945289871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,12 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8da34a549714d5c94d5df8d36b0278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponEffects
-  muzzleFlash:
-  - {fileID: 8842917142400759532, guid: d3bd0ff6e1d0741aabfc15ec22352836, type: 3}
-  - {fileID: 4652146552551569572, guid: b23f212dee7324bfa826cf7cba72d4c4, type: 3}
-  - {fileID: 4078947544183865762, guid: c2deb3d1702d04e5ea784e7f4b1c5b56, type: 3}
-  - {fileID: 6227890221449553460, guid: 8884c3d1579dd4054a9a63fe9849880d, type: 3}
-  - {fileID: 8057384306527205678, guid: c763edf49dc724e2ab246afb5d7348d1, type: 3}
   shootAudio: {fileID: 8300000, guid: 185e49e45f5793542bd3044152b7243c, type: 3}
 --- !u!1 &4623293772089984578
 GameObject:
