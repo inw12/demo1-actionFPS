@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 110337695}
   - component: {fileID: 110337694}
   - component: {fileID: 110337693}
+  - component: {fileID: 110337697}
   m_Layer: 0
   m_Name: InteractableObject
   m_TagString: Untagged
@@ -605,6 +606,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110337697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110337692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7a75a5e0be444339745df1a81154e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Interact (E)
 --- !u!1 &206228157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +2847,7 @@ GameObject:
   - component: {fileID: 1182167573}
   - component: {fileID: 1182167572}
   - component: {fileID: 1182167571}
+  - component: {fileID: 1182167575}
   m_Layer: 0
   m_Name: InteractableObject (1)
   m_TagString: Untagged
@@ -2933,6 +2948,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182167575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182167570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7a75a5e0be444339745df1a81154e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Interact (E)
 --- !u!1 &1184459748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,6 +4552,7 @@ GameObject:
   - component: {fileID: 1933027383}
   - component: {fileID: 1933027382}
   - component: {fileID: 1933027381}
+  - component: {fileID: 1933027385}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4673,6 +4702,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1933027385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933027376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd3361bbc6b04401a8ed95141b7169c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  shortRayDistance: 3
+  farRayDistance: 25
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1970202499
 GameObject:
   m_ObjectHideFlags: 0
