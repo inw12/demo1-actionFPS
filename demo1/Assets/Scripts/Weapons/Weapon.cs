@@ -29,5 +29,10 @@ public class Weapon : MonoBehaviour
             _targetDirection = _bulletSpawn.forward.normalized;
         }
     }
-    public virtual void Attack(bool attackButtonDown) {}
+    public void Attack(bool attackButtonDown)
+    {
+        _attackButtonDown = attackButtonDown;
+        WeaponAttack();
+    }
+    protected virtual void WeaponAttack() {}
 }

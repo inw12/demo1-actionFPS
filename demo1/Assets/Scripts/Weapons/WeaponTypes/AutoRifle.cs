@@ -1,7 +1,7 @@
 // *** Attack implementation for 'Weapon' objects ***
 using UnityEngine;
 [RequireComponent(typeof(WeaponAccuracy), typeof(WeaponRecoil), typeof(WeaponEffects))]
-public class Pistol : Weapon
+public class AutoRifle : Weapon
 {
     private WeaponRecoil _recoilController;
     private WeaponEffects _effectsController;    
@@ -14,6 +14,7 @@ public class Pistol : Weapon
         _accuracyController = GetComponent<WeaponAccuracy>();
         _effectsController = GetComponent<WeaponEffects>();
         _fireTimer = 0f;
+        _attackButtonDown = true;
     }
     protected override void Update()
     {
@@ -22,7 +23,7 @@ public class Pistol : Weapon
     }
     protected override void WeaponAttack()
     {
-        if (_fireTimer >= _fireRate)
+        if (_attackButtonDown && _fireTimer >= _fireRate)
         {
             // visual + audio effects
             _recoilController.TriggerRecoil();
