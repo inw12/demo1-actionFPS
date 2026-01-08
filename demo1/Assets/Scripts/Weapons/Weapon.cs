@@ -11,23 +11,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float _range;
     [SerializeField] [Range(0, 100)] protected int _accuracy;
     [Header("Ammunition")]
-    [SerializeField] protected int _magSize;
-    [SerializeField] protected int _ammoCount;
     [SerializeField] protected GameObject _bulletPrefab;
     [SerializeField] protected Transform _bulletSpawn;
-    protected int _currentMag;
-    protected int _currentAmmo;
     // Other Variables
     protected Vector3 _targetDirection;
     protected Camera _cam;
     protected bool _attackButtonDown;
 
     public virtual void Initialize(Camera cam) => _cam = cam;
-    protected virtual void Start()
-    {
-        _currentAmmo = _ammoCount;
-        _currentMag = _magSize;
-    }
     protected virtual void Update()
     {
         Ray ray = new(_cam.transform.position, _cam.transform.forward);
@@ -39,13 +30,4 @@ public class Weapon : MonoBehaviour
         }
     }
     public virtual void Attack(bool attackButtonDown) {}
-    public virtual void Reload()
-    {
-        if (_currentAmmo > 0)
-        {
-            _currentAmmo -= _magSize - _currentMag;
-            _currentAmmo = Mathf.Clamp(_currentAmmo, 0, _ammoCount);
-            _currentMag = _magSize;
-        }
-    }
 }
