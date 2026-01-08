@@ -35,7 +35,11 @@ public class Bullet : MonoBehaviour
     }
     private void HitEffect(RaycastHit hitInfo)
     {
-        // bullet effect
+        Collider other = hitInfo.collider;
+        if (other.CompareTag("Enemy")) {
+            other.GetComponent<EnemyHealth>().Damage(_damage);
+        }
+        Destroy(gameObject);
     }
     private void RangeCheck()   // destroy bullet after travelling a certain distance
     {
