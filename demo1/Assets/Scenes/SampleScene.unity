@@ -4048,7 +4048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa15f9ff8331d4336881922eb9b29e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
-  weapon: {fileID: 8996268869613920606, guid: af1b4d14b71ce4926a58f06135cfb90c, type: 3}
+  weapon: {fileID: 4551060459452839453, guid: fc42221ef9e9e46499216b544aca7e0e, type: 3}
 --- !u!114 &1844318530
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,8 +1,15 @@
 fileFormatVersion: 2
 guid: d7f531f2e13f78746a0771a83524094e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284029
+  packageName: 'SCI-FI GUNS : GAME OF WEAPONS'
+  packageVersion: 1.0
+  assetPath: Assets/Sci-Fi_Guns_Game-Of-Weapons/Audio/SFX/Wave/Single_Gunshots/Single_Gunshot_Sci-Fi_Gun-30.wav
+  uploadId: 661435
 AudioImporter:
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   defaultSettings:
     serializedVersion: 2
     loadType: 0
@@ -21,10 +28,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 284029
-  packageName: 'SCI-FI GUNS : GAME OF WEAPONS'
-  packageVersion: 1.0
-  assetPath: Assets/Sci-Fi_Guns_Game-Of-Weapons/Audio/SFX/Wave/Single_Gunshots/Single_Gunshot_Sci-Fi_Gun-30.wav
-  uploadId: 661435

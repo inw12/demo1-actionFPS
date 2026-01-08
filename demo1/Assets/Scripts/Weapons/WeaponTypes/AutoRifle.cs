@@ -14,14 +14,15 @@ public class AutoRifle : Weapon
         _accuracyController = GetComponent<WeaponAccuracy>();
         _effectsController = GetComponent<WeaponEffects>();
         _fireTimer = 0f;
-        _attackButtonDown = true;
     }
     protected override void Update()
     {
         base.Update();
         _fireTimer += Time.deltaTime;
+        if (_attackButtonDown) AutoFire();
     }
-    protected override void WeaponAttack()
+    protected override void WeaponAttack() {}
+    private void AutoFire()
     {
         if (_attackButtonDown && _fireTimer >= _fireRate)
         {
