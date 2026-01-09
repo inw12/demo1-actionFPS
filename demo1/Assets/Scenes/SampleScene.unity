@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 167481271}
   - component: {fileID: 167481270}
   - component: {fileID: 167481274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VisionInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,8 +4840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd3361bbc6b04401a8ed95141b7169c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
-  shortRayDistance: 2.5
-  farRayDistance: 25
+  closeInteractionRange: 2
+  farInteractionRange: 30
+  visionRadius: 0.99
   mask:
     serializedVersion: 2
     m_Bits: 64

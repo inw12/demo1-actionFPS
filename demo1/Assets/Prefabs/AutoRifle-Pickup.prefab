@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958687498560962781}
   - component: {fileID: 7630740731450323611}
-  - component: {fileID: 7047285715595310729}
+  - component: {fileID: 1120219612951544152}
   m_Layer: 6
   m_Name: AutoRifle-Pickup
   m_TagString: Untagged
@@ -55,7 +55,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.25, y: 0.35, z: 0.6}
   m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &7047285715595310729
+--- !u!114 &1120219612951544152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f80586ad973486ebbb34600ac6c452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponPickupInteractable
-  promptMessage: Swap Weapon (E)
+  interactionType: 0
+  promptMessage: Swap Weapon
 --- !u!1001 &564687023382913570
 PrefabInstance:
   m_ObjectHideFlags: 0
