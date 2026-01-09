@@ -5712,8 +5712,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
+      propertyPath: yOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
       propertyPath: timeToTarget
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
       propertyPath: promptMessage

@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = IsGrounded();
         ApplyPhysics();
         SpeedManager();
+        Debug.Log(isGrounded);
         Debug.Log(velocity);
 
         // controlling lerp stuff
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        float length = 1 + controller.skinWidth;
+        float length = 1 + controller.skinWidth * 10;
         Ray ray = new(transform.position, -transform.up);
         return Physics.Raycast(ray, length);
     }
