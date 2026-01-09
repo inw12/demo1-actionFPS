@@ -34,10 +34,29 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = IsGrounded();
         ApplyPhysics();
         SpeedManager();
+        Debug.Log(velocity);
 
         // controlling lerp stuff
         CrouchLerp();
     }
+    private bool IsGrounded()
+    {
+        float length = 1 + controller.skinWidth;
+        Ray ray = new(transform.position, -transform.up);
+        return Physics.Raycast(ray, length);
+    }
+    private void ApplyPhysics()
+    {
+        // Air Resistance
+        if (!isGrounded) velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
+        else velocity = Vector3.zero;
+        // Gravity
+        velocity += gravity * Time.deltaTime;
+        if (isGrounded && velocity.y < 0) velocity.y = -2f;
+        // Apply Movement
+        controller.Move(velocity * Time.deltaTime);
+    }
+
     public void Move(Vector2 input)
     {
         Vector3 direction = new()
@@ -102,21 +121,5 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = speed;
             currentJumpHeight = jumpHeight;
         }
-    }
-    private void ApplyPhysics()
-    {
-        // Air Resistance
-        velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
-        // Gravity
-        velocity += gravity * Time.deltaTime;
-        if (isGrounded && velocity.y < 0) velocity.y = -2f;
-        // Apply Movement
-        controller.Move(velocity * Time.deltaTime);
-    }
-    private bool IsGrounded()
-    {
-        float length = 1.25f;
-        Ray ray = new(transform.position, -transform.up);
-        return Physics.Raycast(ray, length);
     }
 }
