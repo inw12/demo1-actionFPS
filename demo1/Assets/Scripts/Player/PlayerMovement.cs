@@ -1,27 +1,32 @@
-// *** Implementation for movement from the player ***
-
+// *** Implementation for movement performed on the CharacterController ***
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player Movement Stats")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float jumpHeight = 1f;
-    [SerializeField] private float gravity = -9.81f;
-    private CharacterController controller;
     private float currentSpeed;
     private float currentJumpHeight;
-    private Vector3 velocity;
-    private bool isGrounded;
     private bool canRun;
     private float crouchTimer = 0f;
     private bool crouchTriggered = false;
     private bool isCrouching = false;
+    
+    [Header("World Physics")]
+    [SerializeField] private float gravityAmount = 9.81f;
+    [SerializeField] private float airResistance;
+    private CharacterController controller;
+    private Vector3 gravity;
+    private Vector3 velocity;
+    private bool isGrounded;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         currentSpeed = speed;
+        gravity = new(0, -gravityAmount, 0);
     }
     private void Update()
     {
@@ -48,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         };
         controller.Move(currentSpeed * Time.deltaTime * transform.TransformDirection(direction));
         // VERTICAL Movement
-        velocity.y += gravity * Time.deltaTime;
+        velocity = gravity * Time.deltaTime;
         if (isGrounded && velocity.y < 0) {
             velocity.y = -2f;
         }
@@ -58,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            velocity.y = Mathf.Sqrt(-2f * currentJumpHeight * gravity);
+            velocity.y = Mathf.Sqrt(-2f * currentJumpHeight * -gravityAmount);
             controller.Move(velocity * Time.deltaTime);
         }
     }
@@ -91,4 +96,9 @@ public class PlayerMovement : MonoBehaviour
             currentJumpHeight = jumpHeight;
         }
     }
+    private void Launch()
+    {
+        
+    }
+
 }
