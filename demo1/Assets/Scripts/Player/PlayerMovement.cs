@@ -1,4 +1,5 @@
 // *** Implementation for movement performed on the CharacterController ***
+using System.Collections;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
 
+    private bool ignoreAirRes;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -34,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = IsGrounded();
         ApplyPhysics();
         SpeedManager();
-        Debug.Log(isGrounded);
-        Debug.Log(velocity);
+        //Debug.Log(isGrounded);
+        //Debug.Log(velocity);
 
         // controlling lerp stuff
         CrouchLerp();
@@ -49,8 +52,15 @@ public class PlayerMovement : MonoBehaviour
     private void ApplyPhysics()
     {
         // Air Resistance
-        if (!isGrounded) velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
-        else velocity = Vector3.zero;
+        if (!isGrounded)
+        {
+            if (!ignoreAirRes) {
+                velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
+            }
+        }
+        else {
+            velocity = Vector3.zero;
+        }
         // Gravity
         velocity += gravity * Time.deltaTime;
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
@@ -72,6 +82,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 start = transform.position;
         velocity = (target - start - 0.5f * Mathf.Pow(time, 2) * gravity) / time;
         controller.Move(velocity * Time.deltaTime);
+        StartCoroutine(LaunchRoutine(time));
+    }
+    private IEnumerator LaunchRoutine(float time)
+    {
+        ignoreAirRes = true;
+        yield return new WaitForSeconds(time / 4);
+        ignoreAirRes = false;
+        Debug.Log("Air Resistance: ON");
     }
     public void Jump()
     {
