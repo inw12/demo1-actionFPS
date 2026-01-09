@@ -9,25 +9,35 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask mask;            
     [Header("HUD Elements")]
     [SerializeField] private TextMeshProUGUI promptText;
+    private Interactable currentInteractable;
     private Camera cam;
 
-    private void Start() {
+    private void Start()
+    {
         cam = GetComponentInChildren<Camera>();
     }
     private void Update()
     {
-        UpdateHUD(string.Empty);
+        UpdateData(null, string.Empty);
         ScanForProximity();
         ScanForVision();
     }
+    public void Interact()
+    {
+        if (currentInteractable) {
+            currentInteractable.Interact();
+        }
+    }
+    // Raycast for closeby interactables
     private void ScanForProximity()
     {
         Ray ray = new(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * closeInteractionRange);
         if (Physics.Raycast(ray, out RaycastHit hit, closeInteractionRange, mask) && hit.collider.TryGetComponent(out Interactable interactable)) {
-            UpdateHUD(interactable.promptMessage);
+            UpdateData(interactable, interactable.promptMessage);
         }
     }
+    // Vision cone for faraway interactables
     private void ScanForVision()
     {
         // ALL collisions detected by sphere
@@ -57,9 +67,14 @@ public class PlayerInteract : MonoBehaviour
             if (dot > visionRadius && dot > bestDot)
             {
                 bestDot = dot;
-                UpdateHUD(interactable.promptMessage);
+                UpdateData(interactable, interactable.promptMessage);
             }
         }
     }
-    private void UpdateHUD(string text) => promptText.text = text;
+    // Updates if something is interactable
+    private void UpdateData(Interactable newInteractable, string newPromptText)
+    {
+        currentInteractable = newInteractable;
+        promptText.text = newPromptText;
+    }
 }
