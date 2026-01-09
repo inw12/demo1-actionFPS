@@ -5032,7 +5032,8 @@ MonoBehaviour:
   runSpeed: 10
   crouchSpeed: 3
   jumpHeight: 1.5
-  gravity: -24
+  gravityAmount: 24
+  airResistance: 1
 --- !u!114 &1933027382
 MonoBehaviour:
   m_ObjectHideFlags: 0

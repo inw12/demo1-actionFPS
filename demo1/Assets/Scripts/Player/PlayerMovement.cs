@@ -45,19 +45,13 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Move(Vector2 input)
     {
-        // HORIZONTAL Movement
         Vector3 direction = new()
         {
             x = input.x,
             z = input.y
         };
         controller.Move(currentSpeed * Time.deltaTime * transform.TransformDirection(direction));
-        // VERTICAL Movement
-        velocity = gravity * Time.deltaTime;
-        if (isGrounded && velocity.y < 0) {
-            velocity.y = -2f;
-        }
-        controller.Move(velocity * Time.deltaTime);
+        ApplyPhysics();
     }
     public void Jump()
     {
@@ -96,9 +90,14 @@ public class PlayerMovement : MonoBehaviour
             currentJumpHeight = jumpHeight;
         }
     }
-    private void Launch()
+    private void ApplyPhysics()
     {
-        
+        // Gravity
+        velocity += gravity * Time.deltaTime;
+        if (isGrounded && velocity.y < 0) velocity.y = -2f;
+        // Air Resistance
+        velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
+        // Apply Movement
+        controller.Move(velocity * Time.deltaTime);
     }
-
 }
