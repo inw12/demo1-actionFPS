@@ -4,8 +4,5 @@ public class GrapplePointInteractable : Interactable
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private float timeToTarget;
 
-    protected override void Interaction()
-    {
-        
-    }
+    protected override void Interaction() => playerMovement.Launch(transform.position, timeToTarget);
 }

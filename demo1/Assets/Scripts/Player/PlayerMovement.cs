@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        ApplyPhysics();
         isGrounded = controller.isGrounded;
         if (crouchTriggered)
         {
@@ -51,7 +52,12 @@ public class PlayerMovement : MonoBehaviour
             z = input.y
         };
         controller.Move(currentSpeed * Time.deltaTime * transform.TransformDirection(direction));
-        ApplyPhysics();
+    }
+    public void Launch(Vector3 target, float time)
+    {
+        Vector3 start = transform.position;
+        velocity = (target - start - 0.5f * Mathf.Pow(time, 2) * gravity) / time;
+        controller.Move(velocity * Time.deltaTime);
     }
     public void Jump()
     {
@@ -92,11 +98,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ApplyPhysics()
     {
+        // Air Resistance
+        velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
         // Gravity
         velocity += gravity * Time.deltaTime;
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
-        // Air Resistance
-        velocity = Vector3.Lerp(velocity, Vector3.zero, airResistance * Time.deltaTime);
         // Apply Movement
         controller.Move(velocity * Time.deltaTime);
     }
