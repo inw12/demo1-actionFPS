@@ -3,6 +3,6 @@ public class WeaponPickupInteractable : Interactable
 {
     protected override void Interaction()
     {
-        Debug.Log("Proximity Interaction Works!");
+        Debug.Log("Weapon Swapped!");
     }
 }
