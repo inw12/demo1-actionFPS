@@ -5033,7 +5033,7 @@ MonoBehaviour:
   crouchSpeed: 3
   jumpHeight: 1.5
   gravityAmount: 24
-  airResistance: 1
+  airResistance: 2
 --- !u!114 &1933027382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5712,9 +5712,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
+      propertyPath: timeToTarget
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
       propertyPath: promptMessage
       value: Hook
       objectReference: {fileID: 0}
+    - target: {fileID: 3675032707335352624, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1933027381}
     - target: {fileID: 8128709621373590583, guid: a11cf36fc2995433680aedd3fd40e69f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12

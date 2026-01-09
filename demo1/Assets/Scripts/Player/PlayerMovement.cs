@@ -30,19 +30,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        // controlling physics & movement
+        isGrounded = IsGrounded();
         ApplyPhysics();
-        isGrounded = controller.isGrounded;
-        if (crouchTriggered)
-        {
-            crouchTimer += Time.deltaTime;
-            float p = Mathf.Pow(crouchTimer, 2);
-            float targetHeight = isCrouching ? 1 : 2;
-            controller.height = Mathf.Lerp(controller.height, targetHeight, p);
-            if (p > 1) {
-                crouchTriggered = false;
-            }
-        }
         SpeedManager();
+
+        // controlling lerp stuff
+        CrouchLerp();
     }
     public void Move(Vector2 input)
     {
@@ -82,6 +76,19 @@ public class PlayerMovement : MonoBehaviour
             crouchTimer = 0f;
         }
     }
+    private void CrouchLerp()
+    {
+        if (crouchTriggered)
+        {
+            crouchTimer += Time.deltaTime;
+            float p = Mathf.Pow(crouchTimer, 2);
+            float targetHeight = isCrouching ? 1 : 2;
+            controller.height = Mathf.Lerp(controller.height, targetHeight, p);
+            if (p > 1) {
+                crouchTriggered = false;
+            }
+        }
+    }
     private void SpeedManager()
     {
         if (isCrouching) {
@@ -105,5 +112,11 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
         // Apply Movement
         controller.Move(velocity * Time.deltaTime);
+    }
+    private bool IsGrounded()
+    {
+        float length = 1.25f;
+        Ray ray = new(transform.position, -transform.up);
+        return Physics.Raycast(ray, length);
     }
 }
