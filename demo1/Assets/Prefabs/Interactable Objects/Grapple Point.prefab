@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8620de7799a042c88b83b585c8f297d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrapplePointInteractable
-  interactionType: 0
+  interactionType: 1
   promptMessage: Interact (E)
