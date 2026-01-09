@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponPickupInteractable
   interactionType: 0
   promptMessage: Swap Weapon
+  _weapon: {fileID: 8996268869613920606, guid: af1b4d14b71ce4926a58f06135cfb90c, type: 3}
+  _playerWeapon: {fileID: 0}
 --- !u!1001 &564687023382913570
 PrefabInstance:
   m_ObjectHideFlags: 0

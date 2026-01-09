@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoRifle
   _damage: 5
-  _fireRate: 0.15
-  _bulletSpd: 350
+  _fireRate: 0.11
+  _bulletSpd: 550
   _range: 100
   _accuracy: 90
   _bulletPrefab: {fileID: 2293477682359179800, guid: 565174b75342544eab4a26a470ecf629, type: 3}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponRecoil
   horizontalRecoil: 0.085
-  verticalRecoil: 1
+  verticalRecoil: 1.5
   recoilSpeed: 30
 --- !u!114 &4370401702048999265
 MonoBehaviour:
