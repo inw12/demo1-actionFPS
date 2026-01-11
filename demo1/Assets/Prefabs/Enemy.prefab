@@ -129,8 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 25
   hitColor: {r: 0.5, g: 0.02, b: 0.02, a: 0}
-  hitBrightness: 20
+  hitBrightness: 25
   effectSpeed: 25
   pulseAmount: 0.35
   shrinkSpeed: 10
   growSpeed: 30
+  deathSpeed: 50

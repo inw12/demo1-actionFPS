@@ -511,19 +511,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -535,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -2011,19 +2015,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -2035,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -2545,19 +2553,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -2569,7 +2581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -3131,19 +3143,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -3155,7 +3171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -4228,19 +4244,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -4252,7 +4272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -5521,19 +5541,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -5545,7 +5569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed
@@ -5801,19 +5825,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: health
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: lerpSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
+      propertyPath: deathSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.b
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.g
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitColor.r
@@ -5825,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitEffectSpeed

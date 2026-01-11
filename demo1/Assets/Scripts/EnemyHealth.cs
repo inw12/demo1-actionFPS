@@ -17,6 +17,9 @@ public class EnemyHealth : MonoBehaviour
     public float growSpeed = 25f;
     private Vector3 scaleOffset;
     private Vector3 baseScale;
+    [Header("Damage Feedback | Death")]
+    public float deathSpeed = 10f;
+    private bool isAlive;
 
     private void Start() {
         currentHealth = health;
@@ -27,24 +30,31 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Update()
     {
+        isAlive = currentHealth > 0;
+        // Emission color -> Default
         Color current = material.GetColor("_EmissionColor");
         Color next = Color.Lerp(current, defaultColor, Time.deltaTime * effectSpeed);
-
-        scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * growSpeed);
-        transform.localScale = baseScale + scaleOffset;
-
         material.SetColor("_EmissionColor", next);
+        // Scale -> Default
+        if (isAlive)
+        {
+            scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * growSpeed);
+            transform.localScale = baseScale + scaleOffset;
+        }
+        // Scale -> Zero
+        else
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, Time.deltaTime * deathSpeed);
+            if (transform.localScale.y < 0.1) {
+                Destroy(gameObject);
+            }
+        }
     }
     public void Damage(float amount) {
+        // reduce HP
         currentHealth -= amount;
+        // visual hit feedback
         scaleOffset = Vector3.one * -pulseAmount;
         material.SetColor("_EmissionColor", hitColor * hitBrightness);
-        CheckForDeath();
-    }
-    private void CheckForDeath()
-    {
-        if (currentHealth <= 0) {
-            Destroy(gameObject);
-        }
     }
 }
