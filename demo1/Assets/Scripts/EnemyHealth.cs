@@ -5,18 +5,18 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float health;
     private float currentHealth;
     
-    [Header("Damage Feedback")]
-    Vector3 baseScale;
-    Vector3 scaleOffset;
-    public float hitShrinkAmount = 0.15f;
-    public float shrinkSpeed = 25f;
-    public float returnSpeed = 10f;
-
-    [SerializeField] private Color hitColor;
-    [SerializeField] private float hitEffectSpeed;
+    [Header("Damage Feedback | Emission")]
+    public Color hitColor;
+    public float hitBrightness;
+    public float effectSpeed;
     private Material material;
     private Color defaultColor;
-
+    [Header("Damage Feedback | Pulse")]
+    public float pulseAmount = 0.15f;
+    public float shrinkSpeed = 25f;
+    public float growSpeed = 25f;
+    private Vector3 scaleOffset;
+    private Vector3 baseScale;
 
     private void Start() {
         currentHealth = health;
@@ -28,17 +28,17 @@ public class EnemyHealth : MonoBehaviour
     private void Update()
     {
         Color current = material.GetColor("_EmissionColor");
-        Color next = Color.Lerp(current, defaultColor, Time.deltaTime * hitEffectSpeed);
+        Color next = Color.Lerp(current, defaultColor, Time.deltaTime * effectSpeed);
 
-        scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * returnSpeed);
+        scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * growSpeed);
         transform.localScale = baseScale + scaleOffset;
 
         material.SetColor("_EmissionColor", next);
     }
     public void Damage(float amount) {
         currentHealth -= amount;
-        scaleOffset = Vector3.one * -hitShrinkAmount;
-        material.SetColor("_EmissionColor", hitColor * 5f);
+        scaleOffset = Vector3.one * -pulseAmount;
+        material.SetColor("_EmissionColor", hitColor * hitBrightness);
         CheckForDeath();
     }
     private void CheckForDeath()
