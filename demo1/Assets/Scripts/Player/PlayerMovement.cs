@@ -43,7 +43,10 @@ public class PlayerMovement : MonoBehaviour
         // controlling lerp stuff
         CrouchLerp();
     }
-    private bool IsGrounded()
+    public float GetSpeed() {
+        return controller.velocity.magnitude;
+    }
+    public bool IsGrounded()
     {
         float length = 1 + controller.skinWidth * 10;
         Ray ray = new(transform.position, -transform.up);

@@ -4683,6 +4683,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
   weapon: {fileID: 4551060459452839453, guid: fc42221ef9e9e46499216b544aca7e0e, type: 3}
+  swayAmount: 0.025
+  swaySmooth: 5
+  bobAmount: 0.02
+  bobSpeed: 3
+  bobStopStrength: 10
+  bobFrequency: 2
 --- !u!114 &1844318530
 MonoBehaviour:
   m_ObjectHideFlags: 0
