@@ -40,15 +40,17 @@ public class PlayerWeapon : MonoBehaviour
         );
         // Movement Bob
         float move = moveController.GetSpeed();
+        Vector3 bobOffset;
         if (moveController.IsGrounded() && move > 0.1f) {
             bobTimer += Time.deltaTime * bobSpeed;
+            float bobX = Mathf.Sin(bobTimer) * bobAmount;
+            float bobY = Mathf.Cos(bobTimer * bobFrequency) * bobAmount;
+            bobOffset = new(bobX, bobY, 0);
         }
         else {
-            bobTimer = Mathf.Lerp(bobTimer, 0, Time.deltaTime * bobStopStrength);
+            //bobTimer = Mathf.Lerp(bobTimer, 0, Time.deltaTime * bobStopStrength);
+            bobOffset = Vector3.zero;
         }
-        float bobX = Mathf.Sin(bobTimer) * bobAmount;
-        float bobY = Mathf.Cos(bobTimer * bobFrequency) * bobAmount;
-        Vector3 bobOffset = new(bobX, bobY, 0);
 
         targetOffset = lookOffset + bobOffset;
         finalOffset = Vector3.Lerp(finalOffset, targetOffset, Time.deltaTime * swaySmooth);
