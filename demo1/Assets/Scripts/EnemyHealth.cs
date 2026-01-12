@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     private Vector3 baseScale;
     [Header("Damage Feedback | Particle Emission")]
     public GameObject hitParticles;
+    public GameObject deathParticles;
 
     private void Start() {
         currentHealth = health;
@@ -50,6 +51,7 @@ public class EnemyHealth : MonoBehaviour
     private void CheckForDeath()
     {
         if (currentHealth <= 0) {
+            _ = Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
