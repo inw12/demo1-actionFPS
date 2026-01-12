@@ -17,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     public float growSpeed = 25f;
     private Vector3 scaleOffset;
     private Vector3 baseScale;
+    [Header("Damage Feedback | Particle Emission")]
+    public GameObject hitParticles;
 
     private void Start() {
         currentHealth = health;
@@ -35,10 +37,14 @@ public class EnemyHealth : MonoBehaviour
 
         material.SetColor("_EmissionColor", next);
     }
-    public void Damage(float amount) {
+    public void Damage(float amount, Vector3 point, Vector3 normal) {
         currentHealth -= amount;
+        // Enemy Pulse 
         scaleOffset = Vector3.one * -pulseAmount;
+        // Glow
         material.SetColor("_EmissionColor", hitColor * hitBrightness);
+        // Particle Spawn
+        _ = Instantiate(hitParticles, point, Quaternion.LookRotation(normal));
         CheckForDeath();
     }
     private void CheckForDeath()

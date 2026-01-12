@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         Collider other = hitInfo.collider;
         if (other.CompareTag("Enemy")) {
-            other.GetComponent<EnemyHealth>().Damage(_damage);
+            other.GetComponent<EnemyHealth>().Damage(_damage, hitInfo.point, hitInfo.normal);
         }
         Destroy(gameObject);
     }
