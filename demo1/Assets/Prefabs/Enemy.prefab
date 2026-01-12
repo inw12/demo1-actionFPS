@@ -130,7 +130,8 @@ MonoBehaviour:
   health: 25
   hitColor: {r: 0.5, g: 0.02, b: 0.02, a: 0}
   hitBrightness: 20
-  effectSpeed: 25
-  pulseAmount: 0.35
-  shrinkSpeed: 10
-  growSpeed: 30
+  effectSpeed: 20
+  pulseAmount: 0.33
+  shrinkSpeed: 15
+  growSpeed: 15
+  hitParticles: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
