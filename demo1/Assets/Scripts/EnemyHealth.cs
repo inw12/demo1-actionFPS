@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Health")]
@@ -20,6 +21,9 @@ public class EnemyHealth : MonoBehaviour
     [Header("Damage Feedback | Particle Emission")]
     public GameObject hitParticles;
     public GameObject deathParticles;
+    public float deathSpeed;
+    private bool isAlive;
+    private bool deathTriggered = false;
 
     private void Start() {
         currentHealth = health;
@@ -27,32 +31,41 @@ public class EnemyHealth : MonoBehaviour
         material.EnableKeyword("_EMISSION");
         baseScale = transform.localScale;
         defaultColor = new(0, 0, 0);
+        isAlive = true;
     }
     private void Update()
     {
+        // Emission Lerp
         Color current = material.GetColor("_EmissionColor");
         Color next = Color.Lerp(current, defaultColor, Time.deltaTime * effectSpeed);
-
-        scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * growSpeed);
-        transform.localScale = baseScale + scaleOffset;
-
         material.SetColor("_EmissionColor", next);
+        // Scale Lerp
+        if (isAlive)
+        {
+            // Return to normal scale
+            scaleOffset = Vector3.Lerp(scaleOffset, Vector3.zero, Time.deltaTime * growSpeed);
+            transform.localScale = baseScale + scaleOffset;
+        }
+        else
+        {
+            // Shrink to nothingness
+            scaleOffset = Vector3.Lerp(scaleOffset, Vector3.one, Time.deltaTime * deathSpeed);
+            transform.localScale = baseScale - scaleOffset;
+            if (transform.localScale.y < 0.25f)
+            {
+                _ = Instantiate(deathParticles, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
     }
     public void Damage(float amount, Vector3 point, Vector3 normal) {
         currentHealth -= amount;
+        isAlive = currentHealth > 0;
         // Enemy Pulse 
         scaleOffset = Vector3.one * -pulseAmount;
         // Glow
         material.SetColor("_EmissionColor", hitColor * hitBrightness);
         // Particle Spawn
         _ = Instantiate(hitParticles, point, Quaternion.LookRotation(normal));
-        CheckForDeath();
-    }
-    private void CheckForDeath()
-    {
-        if (currentHealth <= 0) {
-            _ = Instantiate(deathParticles, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
     }
 }
