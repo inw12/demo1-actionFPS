@@ -74,7 +74,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
         isAlive = currentHealth > 0;
         // Audio
-        src.PlayOneShot(hitSound);
+        if (src) src.PlayOneShot(hitSound);
         // Enemy Pulse 
         scaleOffset = Vector3.one * -pulseAmount;
         // Glow

@@ -386,6 +386,7 @@ MonoBehaviour:
   - {fileID: 6227890221449553460, guid: 8884c3d1579dd4054a9a63fe9849880d, type: 3}
   - {fileID: 8057384306527205678, guid: c763edf49dc724e2ab246afb5d7348d1, type: 3}
   smokeEffect: {fileID: 4072176875776079137, guid: 7e4bce8ee4c35422dbb3f2e9cd82b5af, type: 3}
+  useEffects: 1
 --- !u!1 &4623293772089984578
 GameObject:
   m_ObjectHideFlags: 0
