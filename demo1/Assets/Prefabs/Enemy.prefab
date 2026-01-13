@@ -124,7 +124,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560520191887130381}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   growSpeed: 15
   hitParticles: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
   deathParticles: {fileID: 2184072605107872000, guid: 774a7298486244d9dbff3a150c08bafd, type: 3}
-  deathSpeed: 17.5
-  deathForce: 3.5
-  deathRadius: 6
+  deathSpeed: 24
+  deathForce: 7
+  deathRadius: 7.5
   upwardBoost: 1

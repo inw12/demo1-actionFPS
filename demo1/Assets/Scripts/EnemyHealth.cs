@@ -79,7 +79,6 @@ public class EnemyHealth : MonoBehaviour
     private void DeathExplosion()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, deathRadius);
-        Debug.Log("Hits Detected: " + hits.Length);
         foreach (Collider hit in hits)
         {
             Rigidbody rb = hit.attachedRigidbody;
