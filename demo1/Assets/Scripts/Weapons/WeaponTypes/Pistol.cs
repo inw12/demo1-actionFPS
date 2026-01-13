@@ -27,6 +27,7 @@ public class Pistol : Weapon
             // visual + audio effects
             _recoilController.TriggerRecoil();
             _effectsController.PlayAudio_Shoot();
+            _effectsController.MuzzleFlash(_bulletSpawn.position, transform.rotation);
             // spawn bullet
             Bullet newBullet = Instantiate(_bulletPrefab, _bulletSpawn.position, transform.rotation).GetComponent<Bullet>();
             newBullet.Initialize(_damage, _bulletSpd, _range, _accuracyController.ApplyAccuracy(_targetDirection, _accuracy));

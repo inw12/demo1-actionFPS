@@ -23,7 +23,6 @@ public class EnemyHealth : MonoBehaviour
     public GameObject deathParticles;
     public float deathSpeed;
     private bool isAlive;
-    private bool deathTriggered = false;
 
     private void Start() {
         currentHealth = health;

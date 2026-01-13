@@ -379,6 +379,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponEffects
   shootAudio: {fileID: 8300000, guid: 185e49e45f5793542bd3044152b7243c, type: 3}
+  muzzleFlashes:
+  - {fileID: 8842917142400759532, guid: d3bd0ff6e1d0741aabfc15ec22352836, type: 3}
+  - {fileID: 4652146552551569572, guid: b23f212dee7324bfa826cf7cba72d4c4, type: 3}
+  - {fileID: 4078947544183865762, guid: c2deb3d1702d04e5ea784e7f4b1c5b56, type: 3}
+  - {fileID: 6227890221449553460, guid: 8884c3d1579dd4054a9a63fe9849880d, type: 3}
+  - {fileID: 8057384306527205678, guid: c763edf49dc724e2ab246afb5d7348d1, type: 3}
+  smokeEffect: {fileID: 4072176875776079137, guid: 7e4bce8ee4c35422dbb3f2e9cd82b5af, type: 3}
 --- !u!1 &4623293772089984578
 GameObject:
   m_ObjectHideFlags: 0
