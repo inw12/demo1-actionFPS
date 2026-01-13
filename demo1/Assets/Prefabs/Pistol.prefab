@@ -235,7 +235,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8da34a549714d5c94d5df8d36b0278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponEffects
-  shootAudio: {fileID: 8300000, guid: 185e49e45f5793542bd3044152b7243c, type: 3}
+  shootAudio: {fileID: 8300000, guid: fa954d52b5668e24db704ecce3b341e5, type: 3}
   muzzleFlashes:
   - {fileID: 8842917142400759532, guid: d3bd0ff6e1d0741aabfc15ec22352836, type: 3}
   - {fileID: 4652146552551569572, guid: b23f212dee7324bfa826cf7cba72d4c4, type: 3}

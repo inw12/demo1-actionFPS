@@ -23,6 +23,9 @@ public class EnemyHealth : MonoBehaviour
     public float deathSpeed;
     private bool isAlive;
     private bool deathEffectTriggered = false;
+    [Header("Damage Feedback | SFX")]
+    public AudioClip hitSound;
+    private AudioSource src;
     [Header("Damage Feedback | Death Explosion")]
     public float deathForce = 4f;
     public float deathRadius = 1f;
@@ -35,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
         baseScale = transform.localScale;
         defaultColor = new(0, 0, 0);
         isAlive = true;
+        src = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -69,6 +73,8 @@ public class EnemyHealth : MonoBehaviour
     public void Damage(float amount, Vector3 point, Vector3 normal) {
         currentHealth -= amount;
         isAlive = currentHealth > 0;
+        // Audio
+        src.PlayOneShot(hitSound);
         // Enemy Pulse 
         scaleOffset = Vector3.one * -pulseAmount;
         // Glow

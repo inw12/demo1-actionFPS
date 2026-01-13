@@ -126,4 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrapplePointInteractable
   interactionType: 1
-  promptMessage: Interact (E)
+  promptMessage: Hook
+  playerMovement: {fileID: 0}
+  timeToTarget: 0.75
+  yOffset: 2
