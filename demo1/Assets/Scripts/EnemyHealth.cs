@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Health")]
@@ -23,6 +22,11 @@ public class EnemyHealth : MonoBehaviour
     public GameObject deathParticles;
     public float deathSpeed;
     private bool isAlive;
+    private bool deathEffectTriggered = false;
+    [Header("Damage Feedback | Death Explosion")]
+    public float deathForce = 4f;
+    public float deathRadius = 1f;
+    public float upwardBoost = 0.5f;
 
     private void Start() {
         currentHealth = health;
@@ -52,8 +56,13 @@ public class EnemyHealth : MonoBehaviour
             transform.localScale = baseScale - scaleOffset;
             if (transform.localScale.y < 0.25f)
             {
-                _ = Instantiate(deathParticles, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                if (!deathEffectTriggered)
+                {
+                    deathEffectTriggered = true;
+                    _ = Instantiate(deathParticles, transform.position, Quaternion.identity);
+                    DeathExplosion();
+                    Destroy(gameObject, 1f);
+                }
             }
         }
     }
@@ -66,5 +75,23 @@ public class EnemyHealth : MonoBehaviour
         material.SetColor("_EmissionColor", hitColor * hitBrightness);
         // Particle Spawn
         _ = Instantiate(hitParticles, point, Quaternion.LookRotation(normal));
+    }
+    private void DeathExplosion()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, deathRadius);
+        Debug.Log("Hits Detected: " + hits.Length);
+        foreach (Collider hit in hits)
+        {
+            Rigidbody rb = hit.attachedRigidbody;
+            if (rb == null) continue;
+
+            rb.AddExplosionForce(
+                deathForce,
+                transform.position,
+                deathRadius,
+                upwardBoost,
+                ForceMode.Impulse
+            );
+        }
     }
 }
