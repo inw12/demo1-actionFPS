@@ -335,7 +335,7 @@ MonoBehaviour:
   _fireRate: 0.3
   _bulletSpd: 500
   _range: 45
-  _accuracy: 90
+  _accuracy: 85
   _bulletPrefab: {fileID: 2293477682359179800, guid: 565174b75342544eab4a26a470ecf629, type: 3}
   _bulletSpawn: {fileID: 7515231661484661467}
 --- !u!114 &4951466787649782056

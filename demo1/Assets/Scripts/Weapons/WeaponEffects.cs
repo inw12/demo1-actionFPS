@@ -3,10 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class WeaponEffects : MonoBehaviour
 {
+    public bool useEffects;
     [SerializeField] private AudioClip shootAudio;
     [SerializeField] private GameObject[] muzzleFlashes;
     [SerializeField] private ParticleSystem smokeEffect;
-    public bool useEffects;
     private AudioSource sfx;
     
     private void Start() => sfx = GetComponent<AudioSource>();
