@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitParticles
       value: 
-      objectReference: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
+      objectReference: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
       value: 20
@@ -2008,7 +2008,7 @@ PrefabInstance:
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitParticles
       value: 
-      objectReference: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
+      objectReference: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
       value: 20
@@ -3027,7 +3027,7 @@ PrefabInstance:
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitParticles
       value: 
-      objectReference: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
+      objectReference: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
       value: 20
@@ -4894,7 +4894,7 @@ PrefabInstance:
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitParticles
       value: 
-      objectReference: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
+      objectReference: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
       value: 20
@@ -5584,7 +5584,7 @@ PrefabInstance:
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitParticles
       value: 
-      objectReference: {fileID: 5358990821097978129, guid: bf6b10639040a4cc188409667c252d51, type: 3}
+      objectReference: {fileID: 1974802314843491555, guid: 62e5f6503b6504be486154020c332f08, type: 3}
     - target: {fileID: 5730236492659984345, guid: 8d07c9e54dca5494f85b045ca4e335fb, type: 3}
       propertyPath: hitBrightness
       value: 20
